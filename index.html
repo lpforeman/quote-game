@@ -2,36 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Quote Guessing Game</title>
+  <title>Quote Guesser</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Who Said It?</h1>
-    <p id="instructions">Guess where the quote is from.</p>
-    <blockquote id="quote">Loading quote...</blockquote>
-    
-    <div class="buttons">
-      <button onclick="makeGuess('Kanye')">Kanye</button>
-      <button onclick="makeGuess('Game of Thrones')">Game of Thrones</button>
-      <button onclick="makeGuess('Breaking Bad')">Breaking Bad</button>
-      <button onclick="makeGuess('Ron Swanson')">Ron Swanson</button>
-      <button onclick="makeGuess('The Simpsons')">The Simpsons</button>
-    </div>
-    
-    <p id="result"></p>
-    <button onclick="getNewQuote()" class="new-quote">New Quote</button>
-    <div id="stats">
-      <p id="score">Score: 0 / 0</p>
-      <p id="streak">Streak: 0</p>
-    </div>
-    
-    <h3>Quote History</h3>
-    <ul id="history"></ul>
-  </div>
+  <div class="window-frame">
 
-  
+    <!-- Browser UI -->
+    <div class="retro-header">
+      <div class="toolbar-left">
+        <img src="images/back.png" alt="Back">
+        <img src="images/right.png" alt="Forward">
+        <img src="images/refresh.png" alt="Refresh">
+        <img src="images/home.png" alt="Home">
+      </div>
+      <div class="address-bar">
+        <span>Address</span>
+        <input type="text" value="https://quoteguesser.com" readonly>
+      </div>
+      <div class="toolbar-right">
+        <img src="images/search.png" alt="Search">
+        <img src="images/sunglasses.png" alt="Fun">
+      </div>
+    </div>
+
+
+    <div class="logo-header">
+      <h1 class="pixel-title">QUOTE GUESSER</h1>
+      <img src="images/pointer.png" alt="Hand Icon" class ="title-icon">
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="main-layout">
+      
+    
+      <div class="game-box">
+        <h2>Who Said It?</h2>
+        <p id="instructions">Guess where the quote is from.</p>
+        <blockquote id="quote">Loading quote...</blockquote>
+
+        <div class="buttons">
+          <button onclick="makeGuess('Kanye')">Kanye</button>
+          <button onclick="makeGuess('Game of Thrones')">Game of Thrones</button>
+          <button onclick="makeGuess('Breaking Bad')">Breaking Bad</button>
+          <button onclick="makeGuess('Ron Swanson')">Ron Swanson</button>
+          <button onclick="makeGuess('The Simpsons')">The Simpsons</button>
+        </div>
+
+        <p id="result"></p>
+        <button onclick="getNewQuote()" class="new-quote">New Quote</button>
+
+        <div id="stats">
+          <p id="score">Score: 0 / 0</p>
+          <p id="streak">Streak: 0</p>
+        </div>
+
+        <h3>Quote History</h3>
+        <ul id="history"></ul>
+      </div>
+
+      <!-- Side Navigation -->
+      <div class="quote-nav">
+        <p class="nav-title">★ MENU</p>
+        <a href="index.html">Home</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="request.html">Request</a>
+      </div>
+
+    </div>
+
+    <div class="status-bar">
+      <span>Done</span>
+      <div class="internet-icon">
+        <img src="images/globe.png" alt="Internet Icon">
+      </div>
+    </div>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
