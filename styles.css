@@ -208,3 +208,7 @@ blockquote {
   margin-right: 8px;
   image-rendering: pixelated;
 }
+
+body {
+  cursor: url('images/cursor.cur'), auto;
+}
