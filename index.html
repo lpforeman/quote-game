@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Guessing Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Who Said It?</h1>
+    <p id="instructions">Guess where the quote is from.</p>
+    <blockquote id="quote">Loading quote...</blockquote>
+    
+    <div class="buttons">
+      <button onclick="makeGuess('Kanye')">Kanye</button>
+      <button onclick="makeGuess('Game of Thrones')">Game of Thrones</button>
+      <button onclick="makeGuess('Breaking Bad')">Breaking Bad</button>
+      <button onclick="makeGuess('Ron Swanson')">Ron Swanson</button>
+      <button onclick="makeGuess('The Simpsons')">The Simpsons</button>
+    </div>
+    
+    <p id="result"></p>
+    <button onclick="getNewQuote()" class="new-quote">New Quote</button>
+    <div id="stats">
+      <p id="score">Score: 0 / 0</p>
+      <p id="streak">Streak: 0</p>
+    </div>
+    
+    <h3>Quote History</h3>
+    <ul id="history"></ul>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
