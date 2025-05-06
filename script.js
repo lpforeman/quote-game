@@ -86,23 +86,29 @@ async function getNewQuote() {
 }
 
 function makeGuess(userGuess) {
-    const result = document.getElementById('result');
-  
-    totalCount++;
-  
-    if (userGuess === correctAnswer) {
-      correctCount++;
-      streak++;
-      result.textContent = `✅ Correct! That was ${correctAnswer}.`;
-      result.style.color = 'green';
-    } else {
-      streak = 0;
-      result.textContent = `❌ Wrong! That was ${correctAnswer}.`;
-      result.style.color = 'red';
-    }
-  
-    updateScoreboard();
+  const result = document.getElementById('result');
+  totalCount++;
+
+  if (userGuess === correctAnswer) {
+    correctCount++;
+    streak++;
+    result.textContent = `✅ Correct! That was ${correctAnswer}.`;
+    result.style.color = 'green';
+  } else {
+    streak = 0;
+    result.textContent = `❌ Wrong! That was ${correctAnswer}.`;
+    result.style.color = 'red';
   }
+
+  updateScoreboard();
+
+  // Show result briefly, then load a new quote
+  setTimeout(() => {
+    result.textContent = '';
+    getNewQuote();
+  }, 1500); // 1.5 seconds delay
+}
+
 
   function updateScoreboard() {
     document.getElementById('score').textContent = `Score: ${correctCount} / ${totalCount}`;
@@ -111,10 +117,11 @@ function makeGuess(userGuess) {
     const historyList = document.getElementById('history');
     const newEntry = document.createElement('li');
     newEntry.textContent = `"${currentQuote}" — ${correctAnswer}`;
-    historyList.prepend(newEntry);
+    historyList.append(newEntry);
   
-    if (historyList.children.length > 5) {
-      historyList.removeChild(historyList.lastChild);
+    if (historyList.children.length > 1) {
+      historyList.innerHTML = ''; // Clear the list if it has more than one item
+      historyList.append(newEntry);
     }
   }  
 

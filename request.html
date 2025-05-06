@@ -37,14 +37,37 @@
 
     <div class="main-layout">
 
- 
+      <!-- Request Form -->
       <div class="game-box">
         <h2>Request a Category</h2>
-        <form>
+        <form action="https://formspree.io/f/mzzrrqly" method="POST">
           <label for="category">What show/person would you like to see added?</label><br><br>
-          <input type="text" id="category" name="category" placeholder="e.g. The Office, Drake tweets"><br><br>
+          <input type="text" id="category" name="category" placeholder="e.g. The Office, Drake tweets" required><br><br>        
           <button type="submit">Submit</button>
         </form>
+
+        <script>
+          const form = document.getElementById('suggestion-form');
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            fetch(form.action, {
+              method: 'POST',
+              body: data,
+              headers: {
+                'Accept': 'application/json'
+              }
+            }).then(response => {
+              if (response.ok) {
+                alert("Thanks for your suggestion!");
+                form.reset();
+              } else {
+                alert("Oops! Something went wrong.");
+              }
+            });
+          });
+        </script>
+
       </div>
 
       <!-- Sidebar -->

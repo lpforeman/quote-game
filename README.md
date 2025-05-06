@@ -10,6 +10,10 @@ A client-side web app that shows a random quote from pop culture and challenges 
 - [Breaking Bad Quotes](https://api.breakingbadquotes.xyz)
 - [The Simpsons Quote API](https://thesimpsonsquoteapi.glitch.me/)
 
+## Additional Tools Used
+- [Chat GPT](https://chatgpt.com)
+- [Formspree](https://formspree.io/)
+
 ## How to Run
 Just open in your browser — no setup or API key needed!
 
