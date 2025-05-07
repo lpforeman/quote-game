@@ -29,3 +29,4 @@ The three songs used in the Index page are found from the following website
 - [Toad Harbor]
 
 Pixel Icons were found from: https://www.flaticon.com/search?word=pixelated
+Cursor Icon is from: https://www.cursor.cc/?action=icon&file_id=226976
