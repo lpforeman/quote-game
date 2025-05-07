@@ -39,6 +39,7 @@
     
       <div class="game-box">
         <h2>Who Said It?</h2>
+        <img src="images/smile.png" alt="Icon" class="title-icon-small">
         <p id="instructions">Guess where the quote is from.</p>
         <blockquote id="quote">Loading quote...</blockquote>
 
@@ -68,7 +69,26 @@
         <a href="index.html">Home</a>
         <a href="quotes.html">Quotes</a>
         <a href="request.html">Request</a>
+
+        <div class="music-player">
+          <div class="music-header">♫ Playing</div>
+          <div class="music-controls">
+            <button id="prev">◀</button>
+            <button id="pause">⏸</button>
+            <button id="next">▶</button>
+          </div>
+          <audio id="bg-music"></audio>
+          <div id="track-time">
+            <span id="current-time">0:00</span>
+            <input type="range" id="seek-bar" value="0">
+            <span id="duration">0:00</span>
+          </div>
+        </div>
       </div>
+
+      
+    </div> <!-- closing tag for .quote-nav -->
+  
 
     </div>
 

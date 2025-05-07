@@ -120,6 +120,7 @@ blockquote {
   color: #000;
 }
 
+
 .nav-title {
   font-size: 12px;
   color: #222;
@@ -212,3 +213,68 @@ blockquote {
 body {
   cursor: url('images/cursor.cur'), auto;
 }
+
+.music-player {
+  margin-top: 20px;
+  padding: 3px;
+  background: white;
+  border: 3px groove #999;
+  box-shadow: 5px 5px 0 #333;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #222;
+  width: 100%;
+}
+
+.music-header {
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.music-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.music-controls button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  background: white;
+  border: 2px dotted black;
+  padding: 4px;
+  cursor: pointer;
+}
+
+#track-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+#seek-bar {
+  flex-grow: 1;
+  appearance: none;
+  height: 4px;
+  background: #333;
+  border: none;
+  cursor: pointer;
+}
+
+#seek-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  background: #000;
+}
+
+.title-icon-small {
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  image-rendering: pixelated;
+}
+

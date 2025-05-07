@@ -126,3 +126,97 @@ function makeGuess(userGuess) {
   }  
 
 window.onload = getNewQuote;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const playlist = [
+    'audio/toad.mp3',
+    'audio/sweet.mp3',
+    'audio/mario kart.mp3'
+  ];
+  let track = 0;
+
+  const audio = document.getElementById('bg-music');
+  const playBtn = document.getElementById('pause');
+  const nextBtn = document.getElementById('next');
+  const prevBtn = document.getElementById('prev');
+  const seekBar = document.getElementById('seek-bar');
+  const currentTimeText = document.getElementById('current-time');
+  const durationText = document.getElementById('duration');
+  const trackTitle = document.getElementById('track-title');
+
+  function formatTime(sec) {
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+
+  function setTrack(index) {
+    audio.src = playlist[index];
+    if (trackTitle) {
+      trackTitle.textContent = playlist[index]
+        .split('/').pop()
+        .replace('.mp3', '')
+        .replace(/[-_]/g, ' ')
+        .trim();
+    }
+  }
+
+  // Set initial track
+  setTrack(track);
+
+  // Try autoplay
+  audio.play().catch(() => {
+    console.log("Autoplay blocked. Waiting for click.");
+  });
+
+  // Force play on first user click
+  document.body.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  }, { once: true });
+
+  // On metadata load
+  audio.addEventListener('loadedmetadata', () => {
+    durationText.textContent = formatTime(audio.duration);
+  });
+
+  // Progress
+  audio.addEventListener('timeupdate', () => {
+    seekBar.value = (audio.currentTime / audio.duration) * 100;
+    currentTimeText.textContent = formatTime(audio.currentTime);
+  });
+
+  seekBar.addEventListener('input', () => {
+    audio.currentTime = (seekBar.value / 100) * audio.duration;
+  });
+
+  // Buttons
+  nextBtn.onclick = () => {
+    track = (track + 1) % playlist.length;
+    setTrack(track);
+    audio.play();
+  };
+
+  prevBtn.onclick = () => {
+    track = (track - 1 + playlist.length) % playlist.length;
+    setTrack(track);
+    audio.play();
+  };
+
+  playBtn.onclick = () => {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+     
+    }
+  };
+
+ 
+  audio.addEventListener('ended', () => {
+    track = (track + 1) % playlist.length;
+    setTrack(track);
+    audio.play();
+  });
+});
