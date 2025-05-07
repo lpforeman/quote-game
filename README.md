@@ -19,3 +19,13 @@ Just open in your browser — no setup or API key needed!
 
 ## Credits
 This project uses publicly available APIs for educational purposes only. All quotes are sourced from the respective APIs listed above.
+
+## Media Credits
+The three songs used in the Index page are found from the following website
+- https://downloads.khinsider.com/game-soundtracks/album/mario-kart-8-full-gamerip
+
+- [Mario Kart 8 Deluxe: The Complete Gamerip]
+- [Sweet Sweet Canyon]
+- [Toad Harbor]
+
+Pixel Icons were found from: https://www.flaticon.com/search?word=pixelated
